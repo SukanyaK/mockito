@@ -37,4 +37,18 @@ public class LocationImplTest extends TestBase {
         //then
         assertEquals("-> at <<unknown line>>", loc);
     }
+
+    @Test
+    public void provides_location_class() {
+        //when
+        new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(new LocationImpl().getSourceFile());
+            }
+        }.run();
+
+        //then
+//        assertEquals("-> at <<unknown line>>", loc);
+    }
 }
